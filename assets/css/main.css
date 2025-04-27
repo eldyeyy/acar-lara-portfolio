@@ -831,10 +831,12 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+
 .contact .info-wrap {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  border-radius: 12px;
 }
 
 @media (max-width: 575px) {
@@ -844,90 +846,122 @@ section,
 }
 
 .contact .info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
-.contact .info-item i {
-  font-size: 20px;
+.contact .info-item .left {
+  display: flex;
+  align-items: center;
+}
+
+.contact .info-item .left i {
+  font-size: 24px;
   color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
   width: 44px;
   height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
   margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+.contact .info-item .left:hover i {
+  background: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .contact .info-item h3 {
-  padding: 0;
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 5px;
 }
 
 .contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
   font-size: 14px;
+  margin-bottom: 0;
+  color: #555;
 }
 
-.contact .info-item:hover i {
+/* RIGHT SIDE SOCIAL LINKS */
+.contact .social-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact .social-link i {
+  font-size: 24px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.contact .social-link:hover i {
   background: var(--accent-color);
   color: var(--contrast-color);
 }
 
-.contact .php-email-form {
-  background-color: var(--surface-color);
-  height: 100%;
-  padding: 30px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+/* Contact Boxes (Address, Email, etc.) */
+.contact-box {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  width: 200px; /* dati 250px */
+  padding: 15px; /* dati 20px */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 8px; /* medyo liitan para dikit-dikit ng konti */
 }
 
-@media (max-width: 575px) {
-  .contact .php-email-form {
-    padding: 20px;
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Adjust icon size a bit kung gusto mo rin mas balance */
+.contact-box i {
+  font-size: 1.8rem; /* dati 2rem */
+  margin-bottom: 8px;
+}
+
+
+/* Map Styling */
+.contact .map-container {
+  margin-top: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* General Responsive Adjustments */
+@media (max-width: 767px) {
+  .contact .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-box {
+    width: 100%;
   }
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: var(--surface-color);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
 
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
 
 /*--------------------------------------------------------------
 # Portfolio Details Section
