@@ -833,129 +833,99 @@ section,
 --------------------------------------------------------------*/
 
 .contact .info-wrap {
-  background-color: var(--surface-color);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  border-radius: 12px;
+  background-color: var(--surface-color, #fff);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
-@media (max-width: 575px) {
-  .contact .info-wrap {
-    padding: 20px;
-  }
-}
-
-.contact .info-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.contact .info-item .left {
-  display: flex;
-  align-items: center;
-}
-
-.contact .info-item .left i {
-  font-size: 24px;
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  margin-right: 15px;
-  transition: all 0.3s ease;
-}
-
-.contact .info-item .left:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.contact .info-item h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  font-size: 14px;
-  margin-bottom: 0;
-  color: #555;
-}
-
-/* RIGHT SIDE SOCIAL LINKS */
-.contact .social-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--accent-color);
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.contact .social-link i {
-  font-size: 24px;
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  margin-right: 10px;
-  transition: all 0.3s ease;
-}
-
-.contact .social-link:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-/* Contact Boxes (Address, Email, etc.) */
+/* Contact Box Style */
 .contact-box {
-  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  background: #fdfdfd;
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  width: 200px; /* dati 250px */
-  padding: 15px; /* dati 20px */
-  text-align: center;
+  border-radius: 12px;
+  padding: 20px 24px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 8px; /* medyo liitan para dikit-dikit ng konti */
 }
 
 .contact-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* Adjust icon size a bit kung gusto mo rin mas balance */
+/* Icon Styling */
 .contact-box i {
-  font-size: 1.8rem; /* dati 2rem */
-  margin-bottom: 8px;
+  font-size: 1.8rem;
+  color: var(--accent-color, #6c63ff); /* Blue icon */
+  background: rgba(108, 99, 255, 0.1); /* Light background */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 18px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* When hovering over the whole contact box */
+.contact-box:hover i {
+  background: var(--accent-color, #6c63ff); /* Blue background */
+  color: #fff; /* Make icon white */
+}
+
+/* Additional support if icon is an SVG inside the <i> */
+.contact-box i svg {
+  fill: currentColor; /* Makes SVG take the text color */
+  transition: fill 0.3s ease;
 }
 
 
-/* Map Styling */
-.contact .map-container {
-  margin-top: 40px;
-  border-radius: 10px;
-  overflow: hidden;
+/* Text Content Styling */
+.contact-box .info-content {
+  display: flex;
+  flex-direction: column;
 }
 
-/* General Responsive Adjustments */
+.contact-box .info-content h3 {
+  font-size: 16px;
+  margin: 0 0 4px;
+  font-weight: 600;
+  color: #222;
+}
+
+
+
+.contact-box .info-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.contact-box .info-content a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-box .info-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 767px) {
-  .contact .info-item {
-    flex-direction: column;
-    align-items: flex-start;
+  .contact .info-wrap {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
   }
+
   .contact-box {
-    width: 100%;
+    flex-direction: row;
   }
 }
 
