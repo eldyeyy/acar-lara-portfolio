@@ -873,11 +873,6 @@ section,
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* When hovering over the whole contact box */
-.contact-box:hover i {
-  background: var(--accent-color, #6c63ff); /* Blue background */
-  color: #fff; /* Make icon white */
-}
 
 /* Additional support if icon is an SVG inside the <i> */
 .contact-box i svg {
